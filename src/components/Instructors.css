@@ -1,0 +1,275 @@
+.instructors {
+  padding: 120px 0 80px;
+  position: relative;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  overflow: hidden;
+}
+
+.instructors::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+  opacity: 0.02;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1.2s ease-in-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 4rem;
+  animation: fadeInUp 1.2s ease-in-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+.instructors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  animation: slideInUp 1s ease-in-out;
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+}
+
+.instructor-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+  animation: fadeInUp 1.2s ease-in-out;
+  animation-fill-mode: both;
+}
+
+.instructor-card:nth-child(1) { animation-delay: 0.8s; }
+.instructor-card:nth-child(2) { animation-delay: 1.0s; }
+.instructor-card:nth-child(3) { animation-delay: 1.2s; }
+.instructor-card:nth-child(4) { animation-delay: 1.4s; }
+.instructor-card:nth-child(5) { animation-delay: 1.6s; }
+.instructor-card:nth-child(6) { animation-delay: 1.8s; }
+
+.instructor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.instructor-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.instructor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.instructor-card:hover .instructor-image img {
+  transform: scale(1.1);
+}
+
+.instructor-overlay {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 107, 107, 0.9);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: slideInRight 1s ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+.instructor-content {
+  padding: 1.5rem;
+}
+
+.instructor-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.3rem;
+  animation: fadeInUp 1.2s ease-in-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+.instructor-specialty {
+  color: #ff6b6b;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1.2s ease-in-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+.instructor-bio {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1.2s ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+.instructor-achievements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1.2s ease-in-out;
+  animation-delay: 0.7s;
+  animation-fill-mode: both;
+}
+
+.achievement-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.achievement-badge:hover {
+  background: rgba(255, 107, 107, 0.2);
+  transform: translateY(-2px);
+}
+
+.achievement-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.instructor-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  animation: fadeInUp 1.2s ease-in-out;
+  animation-delay: 0.9s;
+  animation-fill-mode: both;
+}
+
+.instructor-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .instructors-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .instructor-achievements {
+    justify-content: center;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .instructors::before,
+  .section-title,
+  .section-subtitle,
+  .instructors-grid,
+  .instructor-card,
+  .instructor-overlay,
+  .instructor-name,
+  .instructor-specialty,
+  .instructor-bio,
+  .instructor-achievements,
+  .instructor-btn {
+    animation: none;
+  }
+  
+  .instructor-card,
+  .instructor-image img,
+  .achievement-badge,
+  .instructor-btn {
+    transition: none;
+  }
+}
