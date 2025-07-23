@@ -252,7 +252,7 @@
 
 /* Reduced motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .instructors::before,
+  .instructors::before,;
   .section-title,
   .section-subtitle,
   .instructors-grid,

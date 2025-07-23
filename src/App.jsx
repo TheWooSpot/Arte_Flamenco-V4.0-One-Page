@@ -1,26 +1,33 @@
 import React from 'react'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Classes from './components/Classes'
-import About from './components/About'
-import Events from './components/Events'
-import Instructors from './components/Instructors'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Header from './components/shared/Header'
+import Footer from './components/shared/Footer'
+import Home from './pages/Home'
+import About from './pages/About'
+import Classes from './pages/Classes'
+import Events from './pages/Events'
+import Instructors from './pages/Instructors'
+import Contact from './pages/Contact'
 import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <Classes />
-      <About />
-      <Events />
-      <Instructors />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/classes" element={<Classes />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/instructors" element={<Instructors />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 

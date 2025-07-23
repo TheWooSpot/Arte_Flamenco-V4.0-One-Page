@@ -8,11 +8,9 @@ const Header = () => {
   const location = useLocation()
 
   const isActive = (path) => {
-    return location.pathname === path
-  }
-
-  const handleLinkClick = () => {
-    setIsMenuOpen(false)
+    if (path === '/' && location.pathname === '/') return true
+    if (path !== '/' && location.pathname.startsWith(path)) return true
+    return false
   }
 
   return (
@@ -28,42 +26,42 @@ const Header = () => {
             <Link 
               to="/" 
               className={`nav-link ${isActive('/') ? 'active' : ''}`}
-              onClick={handleLinkClick}
+              onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
               to="/about" 
               className={`nav-link ${isActive('/about') ? 'active' : ''}`}
-              onClick={handleLinkClick}
+              onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link 
               to="/classes" 
               className={`nav-link ${isActive('/classes') ? 'active' : ''}`}
-              onClick={handleLinkClick}
+              onClick={() => setIsMenuOpen(false)}
             >
               Classes
             </Link>
             <Link 
               to="/events" 
               className={`nav-link ${isActive('/events') ? 'active' : ''}`}
-              onClick={handleLinkClick}
+              onClick={() => setIsMenuOpen(false)}
             >
               Events
             </Link>
             <Link 
               to="/instructors" 
               className={`nav-link ${isActive('/instructors') ? 'active' : ''}`}
-              onClick={handleLinkClick}
+              onClick={() => setIsMenuOpen(false)}
             >
               Instructors
             </Link>
             <Link 
               to="/contact" 
               className={`nav-link ${isActive('/contact') ? 'active' : ''}`}
-              onClick={handleLinkClick}
+              onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>

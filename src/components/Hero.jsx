@@ -1,66 +1,63 @@
 import React from 'react'
-import { ArrowRight, Flame } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { ArrowRight, Music, Users, Calendar } from 'lucide-react'
 import './Hero.css'
 
 const Hero = () => {
   return (
-    <section className="hero" id="home">
-      <div className="hero-background">
-        <img 
-          src="https://images.pexels.com/photos/6032877/pexels-photo-6032877.jpeg?auto=compress&cs=tinysrgb&w=1920" 
-          alt="Flamenco Dancer"
-          className="hero-bg-image"
-        />
-        <div className="hero-overlay"></div>
-      </div>
-      
-      <div className="container">
-        <div className="hero-content">
-          <div className="hero-badge">
-            <Flame className="badge-icon" />
-            <span>Auténtico Arte Español</span>
-          </div>
-          
+    <section className="hero">
+      <div className="hero-content">
+        <div className="hero-text">
           <h1 className="hero-title">
-            Arte <span className="flamenco-text">Flamenco</span>
+            Experience the <span className="highlight">Passion</span> of Flamenco
           </h1>
-          
           <p className="hero-description">
-            Experience the passion, rhythm, and soul of authentic 
-            Spanish flamenco dance and music
+            Discover the art of authentic Spanish flamenco dance in our intimate studio. 
+            From beginner workshops to advanced masterclasses, immerse yourself in the 
+            dramatic beauty and emotional depth of this timeless art form.
           </p>
-          
           <div className="hero-buttons">
-            <a href="#classes" className="btn btn-primary">
-              Start Your Journey
-              <ArrowRight className="btn-icon" />
-            </a>
-            <a href="#about" className="btn btn-secondary">
+            <Link to="/classes" className="btn btn-primary">
+              View Classes <ArrowRight className="btn-icon" />
+            </Link>
+            <Link to="/about" className="btn btn-secondary">
               Learn More
-            </a>
+            </Link>
           </div>
-          
-          <div className="hero-stats">
-            <div className="stat">
-              <span className="stat-number">25+</span>
-              <span className="stat-label">Years of Tradition</span>
+        </div>
+        
+        <div className="hero-stats">
+          <div className="stat">
+            <Music className="stat-icon" />
+            <div className="stat-content">
+              <span className="stat-number">15+</span>
+              <span className="stat-label">Years Teaching</span>
             </div>
-            <div className="stat-divider"></div>
-            <div className="stat">
-              <span className="stat-number">300+</span>
-              <span className="stat-label">Passionate Dancers</span>
+          </div>
+          <div className="stat">
+            <Users className="stat-icon" />
+            <div className="stat-content">
+              <span className="stat-number">500+</span>
+              <span className="stat-label">Students Trained</span>
             </div>
-            <div className="stat-divider"></div>
-            <div className="stat">
-              <span className="stat-number">12</span>
-              <span className="stat-label">Master Instructors</span>
+          </div>
+          <div className="stat">
+            <Calendar className="stat-icon" />
+            <div className="stat-content">
+              <span className="stat-number">50+</span>
+              <span className="stat-label">Performances</span>
             </div>
           </div>
         </div>
       </div>
       
-      <div className="scroll-indicator">
-        <div className="scroll-line"></div>
+      <div className="hero-image">
+        <img 
+          src="https://images.pexels.com/photos/6032877/pexels-photo-6032877.jpeg?auto=compress&cs=tinysrgb&w=800" 
+          alt="Flamenco dancer in traditional red dress"
+          className="hero-img"
+        />
+        <div className="hero-overlay"></div>
       </div>
     </section>
   )
